@@ -10,35 +10,13 @@ To write a python program to perform stop and wait protocol
 6. Stop the Program
 ## PROGRAM
 ## Client Program
-```
-import socket 
-s=socket.socket()
-s.bind(('localhost',8000))
-s.listen(5) 
-c,addr=s.accept() 
-while True: 
-    i=input("Enter a data: ") 
-    c.send(i.encode()) 
-    ack=c.recv(1024).decode() 
-    if ack: 
-        print(ack) 
-        continue 
-    else: 
-        c.close()
-        break
 
-```
+![2a client](https://github.com/Narendran-sec/2a_Stop_and_Wait_Protocol/assets/147473131/d8449f8f-531b-4e92-929d-b724523a7901)
+
 ## Server Program
-```
-import socket 
-s=socket.socket() 
-s.connect(('localhost',8000)) 
-while True: 
-    print(s.recv(1024).decode()) 
-    s.send("Acknowledgement Recived".encode())
 
+![2a server](https://github.com/Narendran-sec/2a_Stop_and_Wait_Protocol/assets/147473131/f4aaa4ec-b733-44e7-b929-bdaeed01350c)
 
-```
 ## OUTPUT
 
 ![output 1](https://github.com/Narendran-sec/2a_Stop_and_Wait_Protocol/assets/147473131/acdbc899-bb1f-4e1f-8113-4b77760d9ee2)
